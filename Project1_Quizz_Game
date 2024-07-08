@@ -1,0 +1,36 @@
+question_bank=[{"text":"1.who is stayed at no.1 in all formats of cricket?","answer":"B"},
+              {"text":"2.Which is the richest cricket board in world ?","answer":"D"},
+              {"text":"3.When INDIA won the first world cup?","answer":"C"},
+              {"text":"4.Which team of ipl will have most loyal an base?","answer":"A"},
+              {"text":"5.Who holds the title of Mr.360?","answer":"C"}]
+option=[["A.Rohit Sharma","B.Virat kohli","C.Hardik pandya","D.Shuman Gill"],
+        ["A. CA","B.NZC","C.CSA","D.BCCI"],
+        ["A.1999","B.1973","C.1983","D.1963"],
+        ["A.RCB","B.CSK","C.MI","D.PBKS"],
+        ["A.Dinesh Karthik","B.Rishab pant","C.Abraham Benjamin De villiers","D.SuryaKumar Yadav"]]
+
+score=0
+print("\n")
+print("WELCOME TO QUIZZ !")
+def check_answer(user_answer,actual_answer):
+    if user_answer==actual_answer:
+        return True
+
+    else:
+        return False
+
+for opt in range(0,len(question_bank)):
+    print(question_bank[opt]["text"])
+    for i in option[opt]:
+        print(i)
+    guess=input("enter the option (A/B/C/D):").upper()
+    correct_answer=check_answer(guess,question_bank[opt]["answer"])
+    if correct_answer:
+        score=score+1
+        print(f"correct answer!")
+        print("\n")
+    else:
+        print(f"your answer is incorrect \n correct  answer is {question_bank[opt]['answer']}")
+    
+print(f"you have scored={score}")
+print(f"percentage={(score/len(question_bank))*100}%")
